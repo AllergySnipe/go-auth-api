@@ -63,6 +63,12 @@ You can use **Postman** or **curl** to test the API:
     "password": "yourpassword"
   }
   ```
+  curl -X POST http://localhost:8080/signup \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "yourpassword"
+  }'
 
 #### Sign In (Login):
 - **POST** `/signin`
@@ -73,6 +79,12 @@ You can use **Postman** or **curl** to test the API:
     "password": "yourpassword"
   }
   ```
+  curl -X POST http://localhost:8080/signin \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "password": "yourpassword"
+  }'
 
 If successful, the response will include the JWT token in the `Authorization` header. You can then use this token to make requests to protected endpoints.
 
@@ -89,9 +101,13 @@ curl -H "Authorization: Bearer <your-jwt-token>" http://localhost:8080/auth/prot
 ### 5. Refreshing the Token
 
 If your token has expired, you can refresh it by calling the **POST** `/auth/refresh` endpoint, which will return a new token.
+curl -X POST http://localhost:8080/auth/refresh \
+  -H "Authorization: Bearer <your-jwt-token>"
 
 ### 6. Revoke Token
 
 To revoke a token (invalidate the JWT), call the **POST** `/auth/revoke` endpoint.
+curl -X POST http://localhost:8080/auth/revoke \
+  -H "Authorization: Bearer <your-jwt-token>"
 
 ---
