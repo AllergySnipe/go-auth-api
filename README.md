@@ -13,8 +13,7 @@ This is a Go-based REST API for user authentication, which includes JWT-based au
 ## Requirements
 
 - Go 1.18 or later
-- PostgreSQL database (using Tembo as the database provider)
-- Environment variables for database credentials and JWT secret
+- Postman for testing
 
 ## Setup
 
@@ -91,6 +90,7 @@ If successful, the response will include the JWT token in the `Authorization` he
 #### Protected API (Auth Middleware):
 - **GET** `/auth/protected`
 - Requires JWT token in the `Authorization` header (by default passed as the time of signing in if using Postman).
+- If not signed in, does not grant access
 
 Example using `curl` to access a protected route:
 
