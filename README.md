@@ -22,7 +22,7 @@ This is a Go-based REST API for user authentication, which includes JWT-based au
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/go-auth-api.git
+git clone https://github.com/AllergySnipe/go-auth-api.git
 cd go-auth-api
 ```
 
